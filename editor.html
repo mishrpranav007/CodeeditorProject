@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <title>
+        SNIPPETS
+    </title>
+
+
+    <link rel="stylesheet" href="Styledcomponent/navBar.css">
+    <link rel="stylesheet" href="Styledcomponent/menuBar.css">
+    <link rel="stylesheet" href="Styledcomponent/codeStyles.css">
+
+
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+    <script type='text/javascript' src="js/jquery.min.js"></script>
+    <script type='text/javascript' src="js/jquery.menu.js"></script>
+
+    <script type="text/javascript" src="js/ace.js"></script>
+    <script type="text/javascript" src="js/mode-javascript.js"></script>
+    <script type="text/javascript" src="js/theme-twilight.js"></script>
+
+    <style type="text/css" media="screen">
+        #editor {
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="titleBar titleBarStyle ">
+
+            <div class="windowTitle preventSelect draggable"> CODE EDITOR </div>
+
+            <div class="windowControls windowControlsStyle preventSelect">
+
+                <button id="minimise">-</button>
+                <button id="maximise">[]</button>
+                <button id="quit">x</button>
+
+            </div>
+
+            <div id="menu-bar">
+                <ul class="main-menu">
+                    <li>
+                        File
+                        <ul>
+
+                            <li class="icon save" onclick='createNewFile()'><a href="#">New File<span>Ctrl+N</span></a>
+                            </li>
+                            <li>New Folder</li>
+
+                            <li class="separator"></li>
+                            <li class="icon save" onclick='saveFile()'><a
+                                    href="javascript:void(0)">Save<span>Ctrl+S</span></a></li>
+
+                            <li class="icon save" onclick="showSaveDialogAndSaveFile()"><a
+                                    href="javascript:void(0)">Save As</a></li>
+
+                            <li class="separator"></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        View
+                        <ul>
+                            <li>Desktop</li>
+                            <li>Documents
+                                <ul>
+                                    <li>All</li>
+                                    <li>Unfinished</li>
+                                    <li>Closed</li>
+                                </ul>
+                            </li>
+                            <li>Recent Folders</li>
+                             
+                         </ul>
+                    </li>
+
+                    <li>
+                        Tools
+                        <ul>
+                            <li>Load Languages
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JS</li>
+                                    <li>Python</li>
+                                    <li>Ruby</li>
+                                    <li>Go</li>
+                                    <li>JAVA</li>
+                                    <li>Bash</li>
+                                    <li>C++</li>
+                                    <li>Swift</li>
+                                    <li>PHP</li>
+                                 </ul>
+                            </li>
+                        </ul>
+                    </li>
+ 
+
+                    <li>
+                        Help
+                        <ul>
+                            <li onclick='showShortcuts()'>Shortcuts</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="codingScreen codingScreenStyles">
+
+            <div class="explorerContainer explorerContainerStyles">
+
+
+                <div class="filesContainer">
+
+
+
+                </div>
+
+                <div class="folderFiles">
+
+                    <div class="folderTitle">
+
+                        <div id="folderName">
+                            <input type="file" id="real-file" />
+                            <button type="button" id="custom-button">Choose file</button>
+                            <span id="custom-text">No file</span>
+
+
+                            <button type="button" onClick="parent.location='file:///C:/Users/' " value='Users'>Choose me</button>
+
+
+                            
+                        </div>
+
+                        <button id="syncFiles">Refresh</button>
+                        <button id="changeFolder">Change</button>
+
+                    </div>
+
+                    <div class="exploredFilesContainer">
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="editorContainer">
+            <div id="editor"></div>
+            </div>
+
+                <div class="codeStat">
+                    <div class="currentLang">JAVASCRIPT</div>
+                </div>
+
+            </div>
+
+            <div class="widgetsContainer widgetsContainerStyles">
+
+                <div class="widgetsDrawer">
+                    <div class="widgetsHeader">
+                     </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/titleBarStuff.js"></script>
+    <script type='text/javascript' src="js/codeslate.js"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.session.setMode("ace/mode/javascript");
+    </script>
+
+</body>
+
+</html>
